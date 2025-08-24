@@ -1,0 +1,107 @@
+.portraits-section {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--midnight-purple) 50%, var(--ink) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.portraits-container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--blush);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.portraits-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.portrait {
+  position: relative;
+  
+  .portrait-svg {
+    width: 200px;
+    height: 300px;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover .portrait-svg {
+    transform: scale(1.05);
+  }
+}
+
+.left-portrait {
+  .cape {
+    animation: capeFlow 3s ease-in-out infinite;
+  }
+}
+
+.right-portrait {
+  .whip {
+    animation: whipSway 2s ease-in-out infinite;
+  }
+}
+
+@keyframes capeFlow {
+  0%, 100% { transform: scale(1) skewX(0deg); }
+  50% { transform: scale(1.02) skewX(1deg); }
+}
+
+@keyframes whipSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.caption {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--blush);
+  font-style: italic;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pink-moon {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .portraits-grid {
+    gap: 3rem;
+    flex-direction: column;
+  }
+  
+  .portrait .portrait-svg {
+    width: 150px;
+    height: 225px;
+  }
+  
+  .pink-moon {
+    top: 5%;
+    right: 5%;
+    
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

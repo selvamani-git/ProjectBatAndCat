@@ -1,27 +1,123 @@
-# ChandralekhaMicrosite
+# Chandralekha Romantic Microsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+A beautiful, romantic single-page Angular application with rich animations and mature UI design.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Hero Section**: Parallax background with typing animation and nickname cycling
+- **Maze of Secrets**: Interactive mouse-trail maze that reveals hidden words
+- **Batman & Catwoman Portraits**: Noir-style silhouettes with hover embrace animation
+- **Polaroid Wall**: Draggable polaroid cards with flip animations
+- **Album Flip**: Scroll-driven page flipping with love quotes
+- **Grand Finale**: Flying heart with wings and sparkle effects
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Build
+2. **Development Server**:
+   ```bash
+   ng serve
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Build for Production**:
+   ```bash
+   ng build --prod
+   ```
 
-## Running unit tests
+## Customization
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Colors & Theme
+Edit CSS variables in `src/styles.scss`:
+```scss
+:root {
+  --rose: #ff6b9d;
+  --blush: #ffb3d1;
+  --rose-gold: #e8b4cb;
+  --ink: #2d1b3d;
+  --midnight-purple: #4a2c5a;
+}
+```
 
-## Running end-to-end tests
+### Names & Messages
+Update constants in `src/app/shared/constants.ts`:
+```typescript
+export const HER_NAME = 'Chandralekha';
+export const NICKNAMES = ['pattu', 'thangam', 'chellam', 'chandra kutty'];
+export const MAIN_MESSAGE = "I'll miss you and I want to meet you definitely one day.";
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Love Quotes
+Add or modify quotes in the `LOVE_QUOTES` array in `constants.ts`.
 
-## Further help
+### Polaroid Cards
+Edit the `polaroidCards` array in `polaroid-wall.component.ts` to add more memories.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Accessibility Features
+
+- Full keyboard navigation support
+- `prefers-reduced-motion` respect for accessibility
+- Proper ARIA labels and semantic markup
+- High contrast color ratios
+- Screen reader friendly content
+
+## Browser Support
+
+- Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- Mobile responsive design
+- Touch and mouse interaction support
+
+## Performance
+
+- Optimized animations for 60fps
+- Lazy loading for heavy assets
+- Efficient GSAP usage with cleanup
+- Compressed SVG assets
+- No external API dependencies
+
+## Easter Eggs
+
+- Click the moon in the hero section to cycle nicknames
+- Draw a heart shape with your mouse in the maze section
+- Hover over the portraits to see them embrace
+- Scroll wheel in the album section to flip pages
+- Haptic feedback on supported devices
+
+## Technical Stack
+
+- **Angular 17+** with standalone components
+- **GSAP** for advanced animations
+- **TypeScript** with strict mode
+- **SCSS** with CSS custom properties
+- **Responsive design** with mobile-first approach
+- **No external dependencies** beyond core libraries
+
+## File Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── hero-section/
+│   │   ├── maze-section/
+│   │   ├── portraits-section/
+│   │   ├── polaroid-wall/
+│   │   ├── album-flip-section/
+│   │   └── finale-section/
+│   ├── shared/
+│   │   └── constants.ts
+│   └── app.component.ts
+├── assets/
+└── styles.scss
+```
+
+## License
+
+Personal use only. Created with love for Chandralekha. 💕
+
+---
+
+*"Every mile between us is a petal waiting to fall."*

@@ -1,0 +1,175 @@
+.finale-section {
+  background: radial-gradient(circle at center, var(--midnight-purple) 0%, var(--ink) 70%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.finale-container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0.6;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.flying-heart-container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.flying-heart {
+  position: relative;
+}
+
+.heart-wings {
+  filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.5));
+}
+
+.wing {
+  animation: wingFlap 2s ease-in-out infinite;
+  transform-origin: center right;
+}
+
+.left-wing {
+  transform-origin: center left;
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: rotateZ(0deg); }
+  50% { transform: rotateZ(-10deg); }
+}
+
+.sparkle-trail {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 16px;
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-10px) rotate(180deg); opacity: 0.4; }
+}
+
+.final-message {
+  margin-bottom: 3rem;
+}
+
+.final-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  background: linear-gradient(135deg, var(--rose), var(--blush), var(--rose-gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.final-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--blush);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-signature {
+  font-size: 1.1rem;
+  color: var(--rose-gold);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.heart-float {
+  animation: heartFloat 4s ease-in-out infinite;
+}
+
+.petal-float {
+  animation: petalFloat 5s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-15px) rotate(90deg) scale(1.1); }
+  50% { transform: translateY(-10px) rotate(180deg) scale(0.9); }
+  75% { transform: translateY(-20px) rotate(270deg) scale(1.05); }
+}
+
+@keyframes petalFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(120deg); }
+  66% { transform: translateY(-5px) rotate(240deg); }
+}
+
+@media (max-width: 768px) {
+  .flying-heart-container {
+    height: 150px;
+    margin-bottom: 2rem;
+  }
+  
+  .heart-wings {
+    width: 150px;
+    height: 90px;
+  }
+  
+  .sparkle-trail {
+    right: -50px;
+  }
+  
+  .floating-element {
+    font-size: 1.2rem;
+  }
+}

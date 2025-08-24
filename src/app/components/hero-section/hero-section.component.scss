@@ -1,0 +1,116 @@
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--soft-white), var(--blush) 20%, var(--soft-white));
+  overflow: hidden;
+}
+
+.nebula-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+  .nebula-svg {
+    width: 100%;
+    height: 100%;
+    filter: blur(1px);
+  }
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  
+  .main-name {
+    display: inline-block;
+  }
+  
+  .heart-icon {
+    margin-left: 0.5rem;
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+}
+
+.nickname-cycling {
+  height: 2.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+  
+  .nickname {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--rose);
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--midnight-purple);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.moon {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 50%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  75% { transform: scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .moon {
+    top: 5%;
+    right: 5%;
+    
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

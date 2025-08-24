@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --rose: #ff6b9d;
+  --blush: #ffb3d1;
+  --rose-gold: #e8b4cb;
+  --ink: #2d1b3d;
+  --midnight-purple: #4a2c5a;
+  --white: #ffffff;
+  --soft-white: #fef9f3;
+  --shadow: rgba(45, 27, 61, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: var(--soft-white);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.section {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
